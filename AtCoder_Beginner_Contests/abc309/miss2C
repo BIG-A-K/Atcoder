@@ -1,0 +1,28 @@
+N,K = map(int,input().split())
+
+day = []
+numMed = []
+
+
+for i in range(N):
+    a,b = map(int,input().split())
+    day.append(a)
+    numMed.append(b)
+
+dict1 = dict(sorted(dict(zip(day,numMed)).items()))
+
+print(dict1)
+
+for id,d in enumerate(dict1):
+    day[id] = d
+    numMed[id] = dict1[d]
+
+
+for i in range(1,len(day)):
+    numMed[i] += numMed[i-1]
+print(numMed)
+print(day)
+
+for i in range(N,reversed=True):
+    if numMed[i] <= K:
+        print(day[i-1] +1)
