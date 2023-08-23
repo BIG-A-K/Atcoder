@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 mkdir $1
+cp ~/Atcoder/classes/Makefile ~/Atcoder/$1
 set -eu
 for i in `seq 1 5`
     do
