@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define test(i) cout<<"test: "<<i<<endl
+#define rep(i,n) for(int i = 0;i < (n); i++)
+using namespace std;
+
+int main(){
+    ll int n;
+    int q;
+    cin>>n>>q;
+    vector<set<int>> ff(n);
+    rep(i,q){
+        int t;
+        ll int a,b;
+        cin>>t>>a>>b;
+        switch(t){
+            case(1):{
+                ff[a-1].insert(b-1);
+                break;
+            }
+            case(2):{
+                ff[a-1].erase(b-1);
+                break;
+            }
+            case(3):{
+                if(ff[a-1].find(b-1)!=ff[a-1].end() && ff[b-1].find(a-1)!=ff[b-1].end()){
+                        cout<<"Yes"<<endl;
+                }
+                else{
+                    cout<<"No"<<endl;
+                }
+                break;
+            }
+            default:{
+                exit(1);
+            }
+        }
+    }
+} 
